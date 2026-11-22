@@ -46,7 +46,7 @@ CREATE TABLE telefones (
 );
 CREATE TABLE generos (
     id_genero INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    nome VARCHAR(100),
+    nome VARCHAR(100) UNIQUE,
     desc_genero VARCHAR(300)
 );
 
@@ -107,8 +107,9 @@ CREATE TABLE playlists (
 
 CREATE TABLE playlist_assoc (
     id_playlist_assoc INT AUTO_INCREMENT PRIMARY KEY,
-    id_playlist INT UNIQUE,
-    id_musica INT UNIQUE,
+    id_playlist INT,
+    id_musica INT,
+    UNIQUE KEY uk_playlist_musica (id_playlist, id_musica),
     CONSTRAINT fk_id_playlist FOREIGN KEY (id_playlist)
         REFERENCES playlists (id_playlist),
     CONSTRAINT fk_id_musica_assoc FOREIGN KEY (id_musica)
