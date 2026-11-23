@@ -76,6 +76,12 @@ INSERT art_music_assoc (id_art, id_musica) VALUES
 (2, 3),
 (3, 1);
 
+-- Artistas & Albuns - Assocs
+INSERT art_album_assoc (id, id_album) VALUES 
+(1, 2),
+(2, 3),
+(3, 1);
+
 
 
 

@@ -125,7 +125,15 @@ CREATE TABLE art_music_assoc (
     CONSTRAINT fk_musica_assoc FOREIGN KEY (id_musica)
         REFERENCES musicas (id_musica)
 );
-
+CREATE TABLE art_album_assoc (
+    id_art_album_assoc INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id_art INT,
+    id_album INT,
+    CONSTRAINT fk_id_art_album_assoc FOREIGN KEY (id_art) 
+        REFERENCES artistas (id_art),
+    CONSTRAINT fk_id_album_assoc FOREIGN KEY (id_album)
+        REFERENCES albuns (id_album)
+);
 
 
 
